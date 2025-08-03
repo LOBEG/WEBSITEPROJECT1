@@ -33,14 +33,14 @@
   <url>
     <loc>https://invisibletrace.tech/testimonials</loc>
     <lastmod>2024-12-15</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://invisibletrace.tech/blog</loc>
     <lastmod>2024-12-15</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
@@ -66,7 +66,7 @@
   </url>
   
   <url>
-    <loc>https://invisibletrace.tech/terms</loc>
+    <loc>https://invisibletrace.tech/terms-of-service</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -74,52 +74,73 @@
   
   <!-- Blog Articles -->
   <url>
-    <loc>https://invisibletrace.tech/blog/cryptocurrency-recovery-guide-2024</loc>
+    <loc>https://invisibletrace.tech/blog/cybersecurity-best-practices</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://invisibletrace.tech/blog/phone-monitoring-legal-considerations-and-best-practices</loc>
-    <lastmod>2024-12-12</lastmod>
+    <loc>https://invisibletrace.tech/blog/digital-forensics-guide</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://invisibletrace.tech/blog/icloud-security-how-to-protect-your-data-from-breaches</loc>
-    <lastmod>2024-12-10</lastmod>
+    <loc>https://invisibletrace.tech/blog/cryptocurrency-recovery</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://invisibletrace.tech/blog/digital-forensics-in-corporate-investigations</loc>
-    <lastmod>2024-12-08</lastmod>
+    <loc>https://invisibletrace.tech/blog/phone-monitoring-ethics</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://invisibletrace.tech/blog/cybersecurity-threats-in-2024-what-you-need-to-know</loc>
-    <lastmod>2024-12-01</lastmod>
+    <loc>https://invisibletrace.tech/blog/data-recovery-methods</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://invisibletrace.tech/blog/credit-card-fraud-prevention-and-recovery-strategies</loc>
-    <lastmod>2024-11-28</lastmod>
+    <loc>https://invisibletrace.tech/blog/fraud-investigation-techniques</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://invisibletrace.tech/blog/data-recovery-what-to-do-when-files-are-deleted</loc>
-    <lastmod>2024-11-25</lastmod>
+    <loc>https://invisibletrace.tech/blog/network-security-monitoring</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
+  <url>
+    <loc>https://invisibletrace.tech/blog/incident-response-planning</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://invisibletrace.tech/blog/privacy-protection-tips</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://invisibletrace.tech/blog/malware-analysis-basics</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
