@@ -64,7 +64,6 @@ const Contact = () => {
       icon: <MapPin className="w-6 h-6" />,
       title: "Address",
       details: "6525 Marvin Brown St, Fort Worth, Texas 76179",
-      link: "https://maps.google.com/?q=6525+Marvin+Brown+St,+Fort+Worth,+Texas+76179"
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -333,7 +332,7 @@ const Contact = () => {
               },
               {
                 question: "What if you can't recover my data/funds?",
-                answer: "We operate on a 'no results, no payment' basis for most recovery services. You only pay when we deliver results."
+                answer: "We operate on a 'no results, full payment refund' basis for most recovery services. You pay before we deliver results."
               }
             ].map((faq, index) => (
               <motion.div

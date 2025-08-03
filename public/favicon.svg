@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <!-- Glass effect gradient -->
+    <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:0.9" />
+      <stop offset="25%" style="stop-color:#B0E0E6;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#E0F6FF;stop-opacity:0.7" />
+      <stop offset="75%" style="stop-color:#B0E0E6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#4682B4;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <!-- Glass highlight gradient -->
+    <linearGradient id="glassHighlight" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.1" />
+    </linearGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="glassShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#2E4BC6" flood-opacity="0.4"/>
+    </filter>
+    
+    <!-- Inner glow filter -->
+    <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Glass background circle -->
+  <circle cx="64" cy="64" r="58" fill="url(#glassGradient)" filter="url(#glassShadow)" opacity="0.95"/>
+  
+  <!-- Glass highlight overlay -->
+  <ellipse cx="64" cy="45" rx="42" ry="22" fill="url(#glassHighlight)" opacity="0.5"/>
+  
+  <!-- Main logo design - Tech/Invisible theme -->
+  <g transform="translate(64,64)">
+    <!-- Central tech circle -->
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.9"/>
+    
+    <!-- Tech lines radiating outward -->
+    <g stroke="#FFFFFF" stroke-width="1.5" opacity="0.8">
+      <line x1="0" y1="-35" x2="0" y2="-28" />
+      <line x1="25" y1="-25" x2="20" y2="-20" />
+      <line x1="35" y1="0" x2="28" y2="0" />
+      <line x1="25" y1="25" x2="20" y2="20" />
+      <line x1="0" y1="35" x2="0" y2="28" />
+      <line x1="-25" y1="25" x2="-20" y2="20" />
+      <line x1="-35" y1="0" x2="-28" y2="0" />
+      <line x1="-25" y1="-25" x2="-20" y2="-20" />
+    </g>
+    
+    <!-- Inner tech pattern -->
+    <g fill="#FFFFFF" opacity="0.7">
+      <circle cx="0" cy="0" r="3"/>
+      <circle cx="0" cy="-12" r="1.5"/>
+      <circle cx="12" cy="0" r="1.5"/>
+      <circle cx="0" cy="12" r="1.5"/>
+      <circle cx="-12" cy="0" r="1.5"/>
+    </g>
+    
+    <!-- Invisible trace elements -->
+    <g stroke="#FFFFFF" stroke-width="1" fill="none" opacity="0.6">
+      <path d="M -15,-8 Q -10,-12 -5,-8 Q 0,-4 5,-8 Q 10,-12 15,-8" stroke-dasharray="2,2"/>
+      <path d="M -15,8 Q -10,12 -5,8 Q 0,4 5,8 Q 10,12 15,8" stroke-dasharray="2,2"/>
+    </g>
+  </g>
+  
+  <!-- Additional glass reflection -->
+  <ellipse cx="50" cy="40" rx="12" ry="6" fill="#FFFFFF" opacity="0.4"/>
+  
+  <!-- Outer glow ring -->
+  <circle cx="64" cy="64" r="58" fill="none" stroke="#87CEEB" stroke-width="1" opacity="0.3" filter="url(#innerGlow)"/>
+</svg>

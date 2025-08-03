@@ -49,40 +49,40 @@ const Testimonials = () => {
   const testimonials = [
     // ... (your original array of 9 testimonials)
     {
-      name: 'Michael Thompson',
+      name: 'Douglas Cassavar Sr',
       location: 'New York, USA',
       image:
-        'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://i.postimg.cc/qvwtMykb/Whats-App-Image-2025-08-03-at-15-32-56-2d7e0419.jpg',
       rating: 5,
       quote:
-        'Invisible Trace Technology recovered my lost Bitcoin worth $45,000. Their expertise and professionalism exceeded all expectations. Highly recommended!',
+        'Invisible Trace Technology recovered my lost Bitcoin worth $250,000. Their expertise and professionalism exceeded all expectations. Highly recommended!',
       service: 'Cryptocurrency Recovery',
     },
     {
-      name: 'Sarah Johnson',
+      name: 'Mary Helen',
       location: 'Toronto, Canada',
       image:
-        'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://i.postimg.cc/65w52qbD/Whats-App-Image-2025-08-03-at-15-35-06-e89cfed4.jpg',
       rating: 5,
       quote:
         "They helped me unlock my deceased husband's iPhone and recover precious family photos. The team was compassionate and incredibly skilled.",
       service: 'Data Recovery & Device Unlock',
     },
     {
-      name: 'James Wilson',
+      name: 'Joe Web',
       location: 'Sydney, Australia',
       image:
-        'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://i.postimg.cc/QNqZzbSy/Whats-App-Image-2025-08-03-at-15-47-51-d8414a14.jpg',
       rating: 5,
       quote:
         'Outstanding forensic investigation services. They provided crucial evidence for our legal case with detailed documentation and expert testimony.',
       service: 'Digital Forensics',
     },
     {
-      name: 'Emma Martinez',
+      name: 'Elvira Zane',
       location: 'London, United Kingdom',
       image:
-        'https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://i.postimg.cc/ZKq2MhWW/Whats-App-Image-2025-08-03-at-15-50-02-3ea0b22f.jpg',
       rating: 5,
       quote:
         'Professional phone monitoring service helped protect my teenage daughter. The discrete tracking gave me peace of mind as a concerned parent.',
@@ -92,7 +92,7 @@ const Testimonials = () => {
       name: 'Pierre Dubois',
       location: 'Paris, France',
       image:
-        'https://images.pexels.com/photos/1181435/pexels-photo-1181435.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://i.postimg.cc/C5rPgzRz/Whats-App-Image-2025-08-03-at-15-52-24-0fd25d1a.jpg',
       rating: 5,
       quote:
         'Excellent iCloud recovery service. They restored all my business data after I forgot my credentials. Fast, reliable, and completely confidential.',
@@ -102,7 +102,7 @@ const Testimonials = () => {
       name: 'Hans Mueller',
       location: 'Berlin, Germany',
       image:
-        'https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://i.postimg.cc/jdGc4VP0/Whats-App-Image-2025-08-03-at-15-53-52-9af3de48.jpg',
       rating: 5,
       quote:
         'Their cryptocurrency recovery expertise is unmatched. They recovered funds from a scam exchange when I thought all hope was lost. Truly amazing!',
@@ -112,7 +112,7 @@ const Testimonials = () => {
       name: 'Lisa Chen',
       location: 'Vancouver, Canada',
       image:
-        'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://i.postimg.cc/5yX58pt2/Whats-App-Image-2025-08-03-at-15-55-59-f600536f.jpg',
       rating: 5,
       quote:
         'Credit-card debt solution service was life-changing. They negotiated with creditors and helped me get back on track financially.',
@@ -122,7 +122,7 @@ const Testimonials = () => {
       name: 'Robert Davis',
       location: 'Melbourne, Australia',
       image:
-        'https://images.pexels.com/photos/1181304/pexels-photo-1181304.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://i.postimg.cc/BZjwTBkF/Whats-App-Image-2025-08-03-at-15-57-05-051054a0.jpg',
       rating: 5,
       quote:
         'Data-recovery service saved my business. They recovered critical files from a corrupted hard drive. Their technical expertise is outstanding.',
@@ -132,7 +132,7 @@ const Testimonials = () => {
       name: 'Sophie Laurent',
       location: 'Lyon, France',
       image:
-        'https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://i.postimg.cc/YSSxppwF/Whats-App-Image-2025-08-03-at-15-58-33-6964d196.jpg',
       rating: 5,
       quote:
         'Call-tracking service helped identify harassment calls. The detailed reports provided crucial evidence for legal action.',

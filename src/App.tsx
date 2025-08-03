@@ -15,12 +15,11 @@ import TermsOfService from './pages/TermsOfService'; // <-- ADDED IMPORT
 
 // Article content data (with your provided images)
 const articleContent = {
-  'cryptocurrency-recovery-guide-2024': {
-    title: "The Ultimate Guide to Cryptocurrency Recovery in 2024",
-    author: "Marcus Johnson",
-    date: "December 15, 2024",
+  'cryptocurrency-recovery-guide-2025': {
+    title: "The Ultimate Guide to Cryptocurrency Recovery in 2025",
+    author: "Admin",
+    date: "January 15, 2025",
     category: "Cryptocurrency Recovery",
-    readTime: "8 min read",
     image: "https://media.istockphoto.com/id/1445700713/video/technology-global-network-connections-background-concept.jpg?s=640x640&k=20&c=8By8-Ssar2X8FBtZa8GsJhj5SOLLksX7-KmETCY80nY=",
     content: `
       <h2>Introduction to Cryptocurrency Recovery</h2>
@@ -58,10 +57,9 @@ const articleContent = {
   },
   'phone-monitoring-legal-considerations-and-best-practices': {
     title: "Phone Monitoring: Legal Considerations and Best Practices",
-    author: "Sarah Chen",
-    date: "December 12, 2024",
+    author: "Admin",
+    date: "June 12, 2025",
     category: "Phone Monitoring",
-    readTime: "6 min read",
     image: "https://media.istockphoto.com/id/540849924/photo/hacker-using-phone.jpg?s=612x612&w=0&k=20&c=oz1z2K-z7C5-hueoFXMkLuypcRznhGPcu_PhHEU7mTU=",
     content: `
       <h2>Legal Framework for Phone Monitoring</h2>
@@ -89,10 +87,9 @@ const articleContent = {
   },
   'icloud-security-how-to-protect-your-data-from-breaches': {
     title: "iCloud Security: How to Protect Your Data from Breaches",
-    author: "David Rodriguez",
-    date: "December 10, 2024",
+    author: "Admin",
+    date: "June 10, 2025",
     category: "Data Security",
-    readTime: "5 min read",
     image: "https://media.istockphoto.com/id/2219314386/photo/data-collection-on-icloud-a-graphic-showing-a-chart-of-data-storage-and-retrieval-is-on-the.jpg?s=612x612&w=0&k=20&c=fVJZDpSRnF9j8YO83hC4d1hgFLbsct-rCEpsd_0arSg=",
     content: `
       <h2>Understanding iCloud Security</h2>
@@ -119,10 +116,9 @@ const articleContent = {
   },
   'digital-forensics-in-corporate-investigations': {
     title: "Digital Forensics in Corporate Investigations",
-    author: "Emily Watson",
-    date: "December 8, 2024",
+    author: "Admin",
+    date: "March 8, 2025",
     category: "Digital Forensics",
-    readTime: "7 min read",
     image: "https://media.istockphoto.com/id/1136760651/photo/blue-circuit-board-background-of-computer-motherboard-and-magnifier-glass-with-red-zoomed.jpg?s=612x612&w=0&k=20&c=K3fSkMwnUs07L5D6NeNQDg7fsidm-tPzpoMIBc3Uxeo=",
     content: `
       <h2>The Role of Digital Forensics in Corporate Settings</h2>
@@ -160,10 +156,9 @@ const articleContent = {
   },
   'cybersecurity-threats-in-2024-what-you-need-to-know': {
     title: "Cybersecurity Threats in 2024: What You Need to Know",
-    author: "David Rodriguez",
-    date: "December 1, 2024",
+    author: "Admin",
+    date: "May 1, 2024",
     category: "Cybersecurity",
-    readTime: "8 min read",
     image: "https://media.istockphoto.com/id/1372448103/photo/internet-security-protection-from-hacker-attacking-cyber-attack-and-network-security-concept.jpg?s=612x612&w=0&k=20&c=KXEt_o85GFBFJwPQ-WlzRXl0Dnrnda5jYbirpMT1oAw=",
     content: `
       <h2>The Evolving Cybersecurity Landscape</h2>
@@ -201,10 +196,9 @@ const articleContent = {
   },
   'credit-card-fraud-prevention-and-recovery-strategies': {
     title: "Credit Card Fraud: Prevention and Recovery Strategies",
-    author: "Marcus Johnson",
-    date: "December 5, 2024",
+    author: "Admin",
+    date: "December 10, 2024",
     category: "Financial Security",
-    readTime: "6 min read",
     image: "https://media.istockphoto.com/id/1203763961/photo/stacked-credit-cards.jpg?s=612x612&w=0&k=20&c=bEEGZwG120WKDClhmltyAtP0kPMzNir49P4JO3pcies=",
     content: `
       <h2>Understanding Credit Card Fraud</h2>
@@ -244,10 +238,9 @@ const articleContent = {
   },
   'data-recovery-what-to-do-when-files-are-deleted': {
     title: "Data Recovery: What to Do When Files Are Deleted",
-    author: "Sarah Chen",
-    date: "December 3, 2024",
+    author: "Admin",
+    date: "November 3, 2024",
     category: "Data Recovery",
-    readTime: "5 min read",
     image: "https://media.istockphoto.com/id/1414915754/photo/businessman-using-a-computer-to-backup-storage-data-internet-technology-concept-for-backup.jpg?s=612x612&w=0&k=20&c=QQuEcsZi5WfEY6040_oEwEpvQO-TYVTw-wM1FtqL6-Y=",
     content: `
       <h2>Understanding Data Loss</h2>

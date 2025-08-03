@@ -7,8 +7,8 @@ import { Calendar, User, ArrowRight, Shield, Eye, Lock, Search, Bitcoin, CreditC
 // Map titles to slugs that match your App.tsx articleContent keys
 const getSlug = (title: string) => {
   switch (title) {
-    case "The Ultimate Guide to Cryptocurrency Recovery in 2024":
-      return "cryptocurrency-recovery-guide-2024";
+    case "The Ultimate Guide to Cryptocurrency Recovery in 2025":
+      return "cryptocurrency-recovery-guide-2025";
     case "Phone Monitoring: Legal Considerations and Best Practices":
       return "phone-monitoring-legal-considerations-and-best-practices";
     case "iCloud Security: How to Protect Your Data from Breaches":
@@ -19,8 +19,8 @@ const getSlug = (title: string) => {
       return "credit-card-fraud-prevention-and-recovery-strategies";
     case "Data Recovery: What to Do When Files Are Deleted":
       return "data-recovery-what-to-do-when-files-are-deleted";
-    case "Cybersecurity Threats in 2024: What You Need to Know":
-      return "cybersecurity-threats-in-2024-what-you-need-to-know";
+    case "Cybersecurity Threats in 2025: What You Need to Know":
+      return "cybersecurity-threats-in-2025-what-you-need-to-know";
     default:
       // fallback: slugify
       return title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
@@ -31,13 +31,12 @@ const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
 
   const featuredPost = {
-    title: "The Ultimate Guide to Cryptocurrency Recovery in 2024",
+    title: "The Ultimate Guide to Cryptocurrency Recovery in 2025",
     excerpt: "Learn the latest techniques and best practices for recovering lost Bitcoin and other cryptocurrencies. Our experts share insider knowledge on wallet recovery, private key restoration, and scam investigation.",
-    image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800",
-    author: "Marcus Johnson",
-    date: "December 15, 2024",
+    image: "https://media.istockphoto.com/id/2212182726/photo/futuristic-cryptocurrency-concept-with-digital-connections-and-blockchain-technology-around.jpg?s=612x612&w=0&k=20&c=GEF4ODhNcex34tuQuhQLOexF7c4Np6czMSIyjEJTLYU=",
+    author: "Admin",
+    date: "January 15, 2025",
     category: "Cryptocurrency Recovery",
-    readTime: "8 min read"
   };
 
   // Updated images for Latest Articles section as per your instructions
@@ -46,60 +45,54 @@ const Blog = () => {
       title: "Phone Monitoring: Legal Considerations and Best Practices",
       excerpt: "Understanding the legal framework around phone monitoring and tracking services. What you need to know before implementing surveillance solutions.",
       image: "https://media.istockphoto.com/id/2148603307/photo/conceptual-of-a-scammer-using-mobile-phone-with-copy-space.jpg?s=612x612&w=0&k=20&c=HB_ZpDAEVL7EfKmjc0wCc0EMzTEVSbUMkuDkSuesycI=",
-      author: "Sarah Chen",
-      date: "December 12, 2024",
+      author: "Admin",
+      date: "June 12, 2025",
       category: "Phone Monitoring",
-      readTime: "6 min read",
       icon: <Eye className="w-5 h-5" />
     },
     {
       title: "iCloud Security: How to Protect Your Data from Breaches",
       excerpt: "Essential security measures to protect your iCloud account and data. Learn about two-factor authentication, secure passwords, and backup strategies.",
       image: "https://media.istockphoto.com/id/2197373452/photo/digital-security-lock-icon-over-virtual-cityscape-with-programming-code-elements.jpg?s=612x612&w=0&k=20&c=l_JSuaLc_6BN5IZBC3GwKv2bJLfdoLZ-L0KH0WOhFNc=",
-      author: "David Rodriguez",
-      date: "December 10, 2024",
+      author: "Admin",
+      date: "June 10, 2025",
       category: "Data Security",
-      readTime: "5 min read",
       icon: <Lock className="w-5 h-5" />
     },
     {
       title: "Digital Forensics in Corporate Investigations",
       excerpt: "How digital forensics plays a crucial role in corporate investigations. Case studies and methodologies used by professional investigators.",
       image: "https://media.istockphoto.com/id/2131702232/vector/digitalforensics.jpg?s=612x612&w=0&k=20&c=iBgIz0ttFLZyL_r-gdMGTJR8KbcOnrtRSumI_5iT5oo=",
-      author: "Emily Watson",
-      date: "December 8, 2024",
+      author: "Admin",
+      date: "March 8, 2025",
       category: "Digital Forensics",
-      readTime: "7 min read",
       icon: <Search className="w-5 h-5" />
     },
     {
       title: "Credit Card Fraud: Prevention and Recovery Strategies",
       excerpt: "Comprehensive guide to preventing credit card fraud and recovering from financial losses. Expert tips from cybersecurity professionals.",
       image: "https://media.istockphoto.com/id/2193247114/photo/global-financial-trends-displayed-through-coins-graphs-and-a-world-map-visualization.jpg?s=612x612&w=0&k=20&c=0gn5qbYFUvQcciVJ7HvQenOdb3KeHSQRtxegKRk4G_I=",
-      author: "Marcus Johnson",
-      date: "December 5, 2024",
+      author: "Admin",
+      date: "April 5, 2025",
       category: "Financial Security",
-      readTime: "6 min read",
       icon: <CreditCard className="w-5 h-5" />
     },
     {
       title: "Data Recovery: What to Do When Files Are Deleted",
       excerpt: "Step-by-step guide to recovering deleted photos, messages, and important files. Professional techniques and tools for data restoration.",
       image: "https://media.istockphoto.com/id/1180184611/video/animation-of-user-interface-hud-with-body-analysis-and-heart-moving-on-dark-background-for.jpg?s=640x640&k=20&c=FOgLBUmVEsrfSAvOdE-0bvB3aqmi681XFKdM_t60XxA=",
-      author: "Sarah Chen",
+      author: "Admin",
       date: "December 3, 2024",
       category: "Data Recovery",
-      readTime: "5 min read",
       icon: <Shield className="w-5 h-5" />
     },
     {
       title: "Cybersecurity Threats in 2024: What You Need to Know",
       excerpt: "Latest cybersecurity threats and how to protect yourself. Insights from our team of security experts on emerging risks and prevention strategies.",
       image: "https://media.istockphoto.com/id/2166984584/photo/cyber-security-and-protection-personal-identity-concepts-digital-network-privacy-business.jpg?s=612x612&w=0&k=20&c=NKjfq95f5fBBs6RemDStZKJzd1meZ_VFElyiwR5Vm1E=",
-      author: "David Rodriguez",
-      date: "December 1, 2024",
+      author: "Admin",
+      date: "May 1, 2024",
       category: "Cybersecurity",
-      readTime: "8 min read",
       icon: <Shield className="w-5 h-5" />
     }
   ];

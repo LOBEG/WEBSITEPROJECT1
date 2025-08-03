@@ -5,27 +5,23 @@ import { Shield, Users, Award, Target, CheckCircle, Globe } from 'lucide-react';
 const About = () => {
   const team = [
     {
-      name: 'Marcus Johnson',
       role: 'Lead Cybersecurity Strategist',
-      image: 'https://i.pravatar.cc/400?img=68',
-      bio: '15+ years in designing and implementing security architectures'
+      image: 'https://media.istockphoto.com/id/1376264701/photo/attractive-young-european-businesswoman-with-abstract-web-protection-and-thumbprint-id-safety.jpg?s=612x612&w=0&k=20&c=x0gRJl4og7FKOddFYBR1RhirtXKDbakDSde9g-iaII0=',
+      bio: 'Expert in designing and implementing security architectures'
     },
     {
-      name: 'Sarah Chen',
       role: 'Lead Forensic Investigator',
-      image: 'https://i.pravatar.cc/400?img=48',
+      image: 'https://media.istockphoto.com/id/2171060224/photo/analyzing-investigation-board-with-crime-scene-photos.jpg?s=612x612&w=0&k=20&c=tCCv4DYBiMeauhSWczXvrQ6aFidNAWC7XWM-EhH9Rio=',
       bio: 'Expert in cryptocurrency recovery and data analysis'
     },
     {
-      name: 'David Rodriguez',
       role: 'Senior Security Analyst',
-      image: 'https://i.pravatar.cc/400?img=33',
+      image: 'https://media.istockphoto.com/id/2221152398/photo/security-man-guard-working-in-control-room-by-cctv-monitor-for-protection-data-center-or.jpg?s=612x612&w=0&k=20&c=INWJq7o4bDt39ewnu3GNfXMHoBTqArAHoeyRy-yGd3E=',
       bio: 'Specialized in mobile device forensics and tracking'
     },
     {
-      name: 'Emily Watson',
       role: 'Data Recovery Specialist',
-      image: 'https://i.pravatar.cc/400?img=47',
+      image: 'https://media.istockphoto.com/id/2192707968/photo/backup-specialist-meticulously-analyzes-backup-data-constructing-graphs-to-visualize-storage.jpg?s=612x612&w=0&k=20&c=8MslJQXa-nPYP2niC5WSpNmKiHiWcjC7bx9Kf4JUvng=',
       bio: 'Expert in iCloud recovery and data restoration'
     }
   ];
@@ -81,8 +77,8 @@ const About = () => {
             >
               <h2 className="text-4xl font-bold text-white drop-shadow-lg mb-6">Our Story</h2>
               <p className="text-lg text-white/90 drop-shadow mb-6">
-                Founded in 2018, Invisible Trace Technology emerged from a critical need in the digital security landscape.
-                Our founders, experienced cybersecurity professionals, recognized the growing threats to personal and corporate
+                Invisible Trace Technology emerged from a critical need in the digital security landscape.
+                We are experienced cybersecurity professionals, who handles the growing threats to personal and corporate
                 digital assets.
               </p>
               <p className="text-lg text-white/90 drop-shadow mb-6">
@@ -92,11 +88,11 @@ const About = () => {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <CheckCircle className="w-6 h-6 text-green-400 mr-3" />
-                  <span className="text-white/90">Over 500 successful cases completed</span>
+                  <span className="text-white/90">Over 895+ successful cases completed</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-6 h-6 text-green-400 mr-3" />
-                  <span className="text-white/90">$2.5M+ in recovered digital assets</span>
+                  <span className="text-white/90">31,450+ in recovered digital assets</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-6 h-6 text-green-400 mr-3" />
@@ -195,8 +191,8 @@ const About = () => {
         <span className="absolute inset-0 bg-black/60"></span>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white drop-shadow-lg mb-4">Meet Our Expert Team</h2>
-            <p className="text-xl text-white/90 drop-shadow">Experienced professionals dedicated to your digital security</p>
+            <h2 className="text-4xl font-bold text-white drop-shadow-lg mb-4">Specialists Behind Every Solution</h2>
+            <p className="text-xl text-white/90 drop-shadow">Expert digital security solutions built on experience and precision</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (

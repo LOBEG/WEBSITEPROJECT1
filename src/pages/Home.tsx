@@ -152,7 +152,7 @@ const Home = () => {
         className="relative py-16 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1200')"
+            "url('https://media.istockphoto.com/id/1171641491/photo/blockchain-technology.jpg?s=612x612&w=0&k=20&c=0cv7LdJCNLZi5sdZpGSJ7PY4Dada512TuA4pwPT4E3o=')"
         }}
       >
         <span className="absolute inset-0 bg-black/60"></span>
