@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Shield, Eye, Lock, Search, ArrowRight, CheckCircle, DollarSign } from 'lucide-react';
+import { Eye, Lock, Search, ArrowRight, CheckCircle, DollarSign } from 'lucide-react';
 
 // Custom Tech Icon component matching the favicon design
 const TechIcon = ({ className = "w-8 h-8" }) => (
