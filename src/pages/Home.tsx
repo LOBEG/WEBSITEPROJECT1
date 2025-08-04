@@ -7,7 +7,7 @@ import { Eye, Lock, Search, ArrowRight, CheckCircle, DollarSign } from 'lucide-r
 const TechIcon = ({ className = "w-8 h-8" }) => (
   <svg className={className} viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <linearGradient id="techIconGlassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" style={{stopColor:"#87CEEB", stopOpacity:0.9}} />
         <stop offset="25%" style={{stopColor:"#B0E0E6", stopOpacity:0.8}} />
         <stop offset="50%" style={{stopColor:"#E0F6FF", stopOpacity:0.7}} />
@@ -17,7 +17,7 @@ const TechIcon = ({ className = "w-8 h-8" }) => (
     </defs>
     
     {/* Glass background circle */}
-    <circle cx="64" cy="64" r="58" fill="url(#glassGradient)" opacity="0.95"/>
+    <circle cx="64" cy="64" r="58" fill="url(#techIconGlassGradient)" opacity="0.95"/>
     
     {/* Main logo design - Tech/Invisible theme */}
     <g transform="translate(64,64)">
