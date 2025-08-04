@@ -2,9 +2,9 @@ Contact: mailto:security@invisibletrace.tech
 Contact: tel:+1-713-428-1255
 Expires: 2026-01-15T23:59:59.000Z
 Preferred-Languages: en
-Canonical: https://invisibletrace.tech/.well-known/security.txt
+Canonical: https://invisitracetech.com/.well-known/security.txt
 
-Policy: https://invisibletrace.tech/security-policy
+Policy: https://invisitracetech.com/security-policy
 
 # Invisible Trace Tech Security Contact Information
 # For reporting security vulnerabilities and incidents
