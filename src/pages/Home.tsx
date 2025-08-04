@@ -100,7 +100,7 @@ const Home = () => {
 
   const services = [
     {
-      icon: Shield,
+      icon: TechIcon,
       title: "Cybersecurity Consulting",
       description: "Comprehensive security assessments and strategic recommendations to protect your digital infrastructure."
     },
@@ -253,7 +253,11 @@ const Home = () => {
               >
                 <div className="flex flex-col items-center text-center space-y-4">
                   <div className="p-3 sm:p-4 bg-cyan-600/20 rounded-full group-hover:bg-cyan-600/30 transition-colors duration-300">
-                    <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400" />
+                    {service.icon === TechIcon ? (
+                      <TechIcon className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400" />
+                    ) : (
+                      <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400" />
+                    )}
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white">{service.title}</h3>
                   <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{service.description}</p>
@@ -287,7 +291,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
-                icon: Shield,
+                icon: TechIcon,
                 title: "Expert Team",
                 description: "Certified professionals with years of experience in cybersecurity and digital forensics"
               },
@@ -311,7 +315,11 @@ const Home = () => {
                 className="text-center p-6 sm:p-8"
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-cyan-600/20 rounded-full mb-6">
-                  <feature.icon className="w-8 h-8 sm:w-10 sm:h-10 text-cyan-400" />
+                  {feature.icon === TechIcon ? (
+                    <TechIcon className="w-8 h-8 sm:w-10 sm:h-10 text-cyan-400" />
+                  ) : (
+                    <feature.icon className="w-8 h-8 sm:w-10 sm:h-10 text-cyan-400" />
+                  )}
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">{feature.title}</h3>
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{feature.description}</p>
