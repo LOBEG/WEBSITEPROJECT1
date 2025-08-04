@@ -1,7 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Shield, Eye, Lock, Search, ArrowRight, CheckCircle, DollarSign } from 'lucide-react';
+import { Eye, Lock, Search, ArrowRight, CheckCircle, DollarSign } from 'lucide-react';
+
+// Custom Tech Icon component matching the favicon design
+const TechIcon = ({ className = "w-8 h-8" }) => (
+  <svg className={className} viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor:"#87CEEB", stopOpacity:0.9}} />
+        <stop offset="25%" style={{stopColor:"#B0E0E6", stopOpacity:0.8}} />
+        <stop offset="50%" style={{stopColor:"#E0F6FF", stopOpacity:0.7}} />
+        <stop offset="75%" style={{stopColor:"#B0E0E6", stopOpacity:0.8}} />
+        <stop offset="100%" style={{stopColor:"#4682B4", stopOpacity:0.9}} />
+      </linearGradient>
+    </defs>
+    
+    {/* Glass background circle */}
+    <circle cx="64" cy="64" r="58" fill="url(#glassGradient)" opacity="0.95"/>
+    
+    {/* Main logo design - Tech/Invisible theme */}
+    <g transform="translate(64,64)">
+      {/* Central tech circle */}
+      <circle cx="0" cy="0" r="24" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.9"/>
+      
+      {/* Tech lines radiating outward */}
+      <g stroke="currentColor" strokeWidth="1.5" opacity="0.8">
+        <line x1="0" y1="-35" x2="0" y2="-28" />
+        <line x1="25" y1="-25" x2="20" y2="-20" />
+        <line x1="35" y1="0" x2="28" y2="0" />
+        <line x1="25" y1="25" x2="20" y2="20" />
+        <line x1="0" y1="35" x2="0" y2="28" />
+        <line x1="-25" y1="25" x2="-20" y2="20" />
+        <line x1="-35" y1="0" x2="-28" y2="0" />
+        <line x1="-25" y1="-25" x2="-20" y2="-20" />
+      </g>
+      
+      {/* Inner tech pattern */}
+      <g fill="currentColor" opacity="0.7">
+        <circle cx="0" cy="0" r="3"/>
+        <circle cx="0" cy="-12" r="1.5"/>
+        <circle cx="12" cy="0" r="1.5"/>
+        <circle cx="0" cy="12" r="1.5"/>
+        <circle cx="-12" cy="0" r="1.5"/>
+      </g>
+      
+      {/* Invisible trace elements */}
+      <g stroke="currentColor" strokeWidth="1" fill="none" opacity="0.6">
+        <path d="M -15,-8 Q -10,-12 -5,-8 Q 0,-4 5,-8 Q 10,-12 15,-8" strokeDasharray="2,2"/>
+        <path d="M -15,8 Q -10,12 -5,8 Q 0,4 5,8 Q 10,12 15,8" strokeDasharray="2,2"/>
+      </g>
+    </g>
+  </svg>
+);
 
 const Home = () => {
   const [clientCount, setClientCount] = useState(0);
@@ -121,7 +172,7 @@ const Home = () => {
             >
               <div className="bg-gray-800 rounded-2xl p-8 shadow-2xl border border-cyan-400/20">
                 <div className="flex items-center mb-6">
-                  <Shield className="w-12 h-12 text-cyan-400 mr-4" />
+                  <TechIcon className="w-12 h-12 text-cyan-400 mr-4" />
                   <div>
                     <h3 className="text-2xl font-bold">Secure & Confidential</h3>
                     <p className="text-gray-400">100% Privacy Guaranteed</p>
@@ -254,7 +305,6 @@ const Home = () => {
 
           <div className="mt-8 pt-8 border-t border-cyan-400/30">
             <button onClick={() => setShowPrivacyModal(true)} className="text-cyan-100 hover:text-white underline transition-colors duration-300">
-              Privacy Policy
             </button>
           </div>
         </div>

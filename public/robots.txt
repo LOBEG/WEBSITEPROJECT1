@@ -7,6 +7,13 @@ Allow: /
 
 # Allow all search engines to access the sitemap
 Sitemap: https://invisibletrace.tech/sitemap.xml
+Sitemap: https://invisibletrace.tech/sitemap-index.xml
 
 # Crawl-delay for all bots (optional, helps prevent overloading)
 Crawl-delay: 1
+
+# Allow specific important files
+Allow: /favicon.svg
+Allow: /favicon.ico
+Allow: /*.css
+Allow: /*.js

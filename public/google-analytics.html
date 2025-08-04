@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Google Analytics Setup - Invisible Trace Tech</title>
+    <meta name="description" content="Google Analytics configuration guide for Invisible Trace Tech">
+</head>
+<body>
+    <h1>Google Analytics Setup</h1>
+    <p>To add Google Analytics to your website:</p>
+    
+    <h2>Step 1: Create Google Analytics Account</h2>
+    <ol>
+        <li>Go to <a href="https://analytics.google.com" target="_blank">Google Analytics</a></li>
+        <li>Create a new property for invisibletrace.tech</li>
+        <li>Get your Measurement ID (format: G-XXXXXXXXXX)</li>
+    </ol>
+    
+    <h2>Step 2: Add Tracking Code</h2>
+    <p>Add this code to your index.html file in the &lt;head&gt; section:</p>
+    
+    <pre><code>
+&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+&lt;/script&gt;
+    </code></pre>
+    
+    <h2>Step 3: Configure Goals</h2>
+    <p>Set up conversion goals for:</p>
+    <ul>
+        <li>Contact form submissions</li>
+        <li>Phone calls</li>
+        <li>Service page visits</li>
+        <li>Blog article reads</li>
+    </ul>
+    
+    <p><a href="/">Return to Homepage</a></p>
+</body>
+</html>
