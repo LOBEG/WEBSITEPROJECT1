@@ -6,8 +6,8 @@ Allow: /
 # Disallow: /private/
 
 # Allow all search engines to access the sitemap
-Sitemap: https://invisibletech.netlify.app/sitemap.xml
-Sitemap: https://invisibletech.netlify.app/sitemap-index.xml
+Sitemap: https://invisitracetech.com/sitemap.xml
+Sitemap: https://invisitracetech.com/sitemap-index.xml
 
 # Crawl-delay for all bots (optional, helps prevent overloading)
 Crawl-delay: 1
