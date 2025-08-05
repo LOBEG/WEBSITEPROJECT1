@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Image Template with Logo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+        }
+        
+        .og-image {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #1a365d 100%);
+            position: relative;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .twitter-image {
+            width: 1200px;
+            height: 600px;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #1a365d 100%);
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        /* Enhanced circuit board pattern */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #87CEEB15 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #87CEEB10 1px, transparent 1px),
+                linear-gradient(90deg, transparent 98%, #87CEEB08 100%),
+                linear-gradient(0deg, transparent 98%, #87CEEB08 100%);
+            background-size: 50px 50px, 30px 30px, 60px 60px, 60px 60px;
+        }
+        
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+        
+        /* Logo container with SVG */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo-svg {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+        }
+        
+        .logo-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #87CEEB;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .service {
+            background: rgba(135, 206, 235, 0.15);
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(135, 206, 235, 0.4);
+            font-size: 16px;
+            color: #87CEEB;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-info {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .stats {
+            font-size: 18px;
+            color: #87CEEB;
+            font-weight: bold;
+        }
+        
+        /* Enhanced decorative elements */
+        .shield-icon {
+            position: absolute;
+            top: 40px;
+            right: 60px;
+            font-size: 50px;
+            color: rgba(135, 206, 235, 0.2);
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .lock-icon {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 35px;
+            color: rgba(135, 206, 235, 0.15);
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .magnifying-icon {
+            position: absolute;
+            top: 50px;
+            left: 60px;
+            font-size: 40px;
+            color: rgba(135, 206, 235, 0.1);
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        /* Twitter specific adjustments */
+        .twitter-image .logo-svg {
+            width: 70px;
+            height: 70px;
+        }
+        
+        .twitter-image .logo-text {
+            font-size: 42px;
+        }
+        
+        .twitter-image .tagline {
+            font-size: 22px;
+        }
+        
+        .twitter-image .service {
+            font-size: 14px;
+            padding: 10px 16px;
+        }
+        
+        .twitter-image .contact-info {
+            font-size: 18px;
+        }
+        
+        .label {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        /* Glowing effect for premium look */
+        .content::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            right: -50px;
+            bottom: -50px;
+            background: radial-gradient(circle at center, rgba(135, 206, 235, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="label">🎯 OG Image (1200x630px) - Facebook/LinkedIn</div>
+    <div class="og-image">
+        <div class="bg-pattern"></div>
+        <div class="shield-icon">🛡️</div>
+        <div class="lock-icon">🔒</div>
+        <div class="magnifying-icon">🔍</div>
+        <div class="content">
+            <div class="logo-container">
+                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+                  <defs>
+                    <linearGradient id="faviconGlassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:0.9" />
+                      <stop offset="25%" style="stop-color:#B0E0E6;stop-opacity:0.8" />
+                      <stop offset="50%" style="stop-color:#E0F6FF;stop-opacity:0.7" />
+                      <stop offset="75%" style="stop-color:#B0E0E6;stop-opacity:0.8" />
+                      <stop offset="100%" style="stop-color:#4682B4;stop-opacity:0.9" />
+                    </linearGradient>
+                    <linearGradient id="faviconGlassHighlight" x1="0%" y1="0%" x2="100%" y2="50%">
+                      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.6" />
+                      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:0.2" />
+                      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.1" />
+                    </linearGradient>
+                    <filter id="faviconGlassShadow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#2E4BC6" flood-opacity="0.4"/>
+                    </filter>
+                    <filter id="faviconInnerGlow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                      <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  
+                  <circle cx="64" cy="64" r="58" fill="url(#faviconGlassGradient)" filter="url(#faviconGlassShadow)" opacity="0.95"/>
+                  <ellipse cx="64" cy="45" rx="42" ry="22" fill="url(#faviconGlassHighlight)" opacity="0.5"/>
+                  
+                  <g transform="translate(64,64)">
+                    <circle cx="0" cy="0" r="24" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.9"/>
+                    <g stroke="#FFFFFF" stroke-width="1.5" opacity="0.8">
+                      <line x1="0" y1="-35" x2="0" y2="-28" />
+                      <line x1="25" y1="-25" x2="20" y2="-20" />
+                      <line x1="35" y1="0" x2="28" y2="0" />
+                      <line x1="25" y1="25" x2="20" y2="20" />
+                      <line x1="0" y1="35" x2="0" y2="28" />
+                      <line x1="-25" y1="25" x2="-20" y2="20" />
+                      <line x1="-35" y1="0" x2="-28" y2="0" />
+                      <line x1="-25" y1="-25" x2="-20" y2="-20" />
+                    </g>
+                    <g fill="#FFFFFF" opacity="0.7">
+                      <circle cx="0" cy="0" r="3"/>
+                      <circle cx="0" cy="-12" r="1.5"/>
+                      <circle cx="12" cy="0" r="1.5"/>
+                      <circle cx="0" cy="12" r="1.5"/>
+                      <circle cx="-12" cy="0" r="1.5"/>
+                    </g>
+                    <g stroke="#FFFFFF" stroke-width="1" fill="none" opacity="0.6">
+                      <path d="M -15,-8 Q -10,-12 -5,-8 Q 0,-4 5,-8 Q 10,-12 15,-8" stroke-dasharray="2,2"/>
+                      <path d="M -15,8 Q -10,12 -5,8 Q 0,4 5,8 Q 10,12 15,8" stroke-dasharray="2,2"/>
+                    </g>
+                  </g>
+                  
+                  <ellipse cx="50" cy="40" rx="12" ry="6" fill="#FFFFFF" opacity="0.4"/>
+                  <circle cx="64" cy="64" r="58" fill="none" stroke="#87CEEB" stroke-width="1" opacity="0.3" filter="url(#faviconInnerGlow)"/>
+                </svg>
+                <div class="logo-text">INVISIBLE TRACE TECH</div>
+            </div>
+            <div class="tagline">Professional Cybersecurity Services</div>
+            <div class="services">
+                <div class="service">Digital Forensics</div>
+                <div class="service">Cryptocurrency Recovery</div>
+                <div class="service">Phone Monitoring</div>
+            </div>
+            <div class="contact-info">📍 Houston, TX • 📞 (713) 428-1255</div>
+            <div class="stats">99.9% Success Rate • 24/7 Support</div>
+        </div>
+    </div>
+    
+    <div class="label">🐦 Twitter Card (1200x600px)</div>
+    <div class="twitter-image">
+        <div class="bg-pattern"></div>
+        <div class="shield-icon">🛡️</div>
+        <div class="lock-icon">🔒</div>
+        <div class="magnifying-icon">🔍</div>
+        <div class="content">
+            <div class="logo-container">
+                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+                  <defs>
+                    <linearGradient id="faviconGlassGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:0.9" />
+                      <stop offset="25%" style="stop-color:#B0E0E6;stop-opacity:0.8" />
+                      <stop offset="50%" style="stop-color:#E0F6FF;stop-opacity:0.7" />
+                      <stop offset="75%" style="stop-color:#B0E0E6;stop-opacity:0.8" />
+                      <stop offset="100%" style="stop-color:#4682B4;stop-opacity:0.9" />
+                    </linearGradient>
+                    <linearGradient id="faviconGlassHighlight2" x1="0%" y1="0%" x2="100%" y2="50%">
+                      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.6" />
+                      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:0.2" />
+                      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.1" />
+                    </linearGradient>
+                    <filter id="faviconGlassShadow2" x="-50%" y="-50%" width="200%" height="200%">
+                      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#2E4BC6" flood-opacity="0.4"/>
+                    </filter>
+                    <filter id="faviconInnerGlow2" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                      <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  
+                  <circle cx="64" cy="64" r="58" fill="url(#faviconGlassGradient2)" filter="url(#faviconGlassShadow2)" opacity="0.95"/>
+                  <ellipse cx="64" cy="45" rx="42" ry="22" fill="url(#faviconGlassHighlight2)" opacity="0.5"/>
+                  
+                  <g transform="translate(64,64)">
+                    <circle cx="0" cy="0" r="24" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.9"/>
+                    <g stroke="#FFFFFF" stroke-width="1.5" opacity="0.8">
+                      <line x1="0" y1="-35" x2="0" y2="-28" />
+                      <line x1="25" y1="-25" x2="20" y2="-20" />
+                      <line x1="35" y1="0" x2="28" y2="0" />
+                      <line x1="25" y1="25" x2="20" y2="20" />
+                      <line x1="0" y1="35" x2="0" y2="28" />
+                      <line x1="-25" y1="25" x2="-20" y2="20" />
+                      <line x1="-35" y1="0" x2="-28" y2="0" />
+                      <line x1="-25" y1="-25" x2="-20" y2="-20" />
+                    </g>
+                    <g fill="#FFFFFF" opacity="0.7">
+                      <circle cx="0" cy="0" r="3"/>
+                      <circle cx="0" cy="-12" r="1.5"/>
+                      <circle cx="12" cy="0" r="1.5"/>
+                      <circle cx="0" cy="12" r="1.5"/>
+                      <circle cx="-12" cy="0" r="1.5"/>
+                    </g>
+                    <g stroke="#FFFFFF" stroke-width="1" fill="none" opacity="0.6">
+                      <path d="M -15,-8 Q -10,-12 -5,-8 Q 0,-4 5,-8 Q 10,-12 15,-8" stroke-dasharray="2,2"/>
+                      <path d="M -15,8 Q -10,12 -5,8 Q 0,4 5,8 Q 10,12 15,8" stroke-dasharray="2,2"/>
+                    </g>
+                  </g>
+                  
+                  <ellipse cx="50" cy="40" rx="12" ry="6" fill="#FFFFFF" opacity="0.4"/>
+                  <circle cx="64" cy="64" r="58" fill="none" stroke="#87CEEB" stroke-width="1" opacity="0.3" filter="url(#faviconInnerGlow2)"/>
+                </svg>
+                <div class="logo-text">INVISIBLE TRACE TECH</div>
+            </div>
+            <div class="tagline">Professional Cybersecurity Services</div>
+            <div class="services">
+                <div class="service">Digital Forensics</div>
+                <div class="service">Cryptocurrency Recovery</div>
+                <div class="service">Phone Monitoring</div>
+            </div>
+            <div class="contact-info">📍 Houston, TX • 📞 (713) 428-1255</div>
+            <div class="stats">99.9% Success Rate • 24/7 Support</div>
+        </div>
+    </div>
+</body>
+</html>
