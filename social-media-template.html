@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Image Template</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+        }
+        
+        .og-image {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #1a365d 100%);
+            position: relative;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .twitter-image {
+            width: 1200px;
+            height: 600px;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #1a365d 100%);
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #87CEEB15 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #87CEEB10 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+        }
+        
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #87CEEB;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tagline {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .service {
+            background: rgba(135, 206, 235, 0.1);
+            padding: 15px 25px;
+            border-radius: 25px;
+            border: 1px solid rgba(135, 206, 235, 0.3);
+            font-size: 16px;
+            color: #87CEEB;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        
+        .stats {
+            font-size: 18px;
+            color: #87CEEB;
+            font-weight: bold;
+        }
+        
+        .shield-icon {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            font-size: 60px;
+            color: rgba(135, 206, 235, 0.3);
+        }
+        
+        .lock-icon {
+            position: absolute;
+            bottom: 30px;
+            left: 50px;
+            font-size: 40px;
+            color: rgba(135, 206, 235, 0.2);
+        }
+        
+        /* Twitter specific adjustments */
+        .twitter-image .logo {
+            font-size: 42px;
+        }
+        
+        .twitter-image .tagline {
+            font-size: 22px;
+        }
+        
+        .twitter-image .service {
+            font-size: 14px;
+            padding: 12px 20px;
+        }
+        
+        .twitter-image .contact-info {
+            font-size: 18px;
+        }
+        
+        .label {
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="label">OG Image (1200x630px) - Facebook/LinkedIn</div>
+    <div class="og-image">
+        <div class="bg-pattern"></div>
+        <div class="shield-icon">🛡️</div>
+        <div class="lock-icon">🔒</div>
+        <div class="content">
+            <div class="logo">🔍 INVISIBLE TRACE TECH</div>
+            <div class="tagline">Professional Cybersecurity Services</div>
+            <div class="services">
+                <div class="service">🔍 Digital Forensics</div>
+                <div class="service">₿ Crypto Recovery</div>
+                <div class="service">📱 Phone Monitoring</div>
+                <div class="service">🔐 Data Protection</div>
+            </div>
+            <div class="contact-info">📍 Houston, TX • 📞 (713) 428-1255</div>
+            <div class="stats">99.9% Success Rate • 24/7 Support</div>
+        </div>
+    </div>
+    
+    <div class="label">Twitter Card (1200x600px)</div>
+    <div class="twitter-image">
+        <div class="bg-pattern"></div>
+        <div class="shield-icon">🛡️</div>
+        <div class="lock-icon">🔒</div>
+        <div class="content">
+            <div class="logo">🔍 INVISIBLE TRACE TECH</div>
+            <div class="tagline">Professional Cybersecurity Services</div>
+            <div class="services">
+                <div class="service">🔍 Digital Forensics</div>
+                <div class="service">₿ Crypto Recovery</div>
+                <div class="service">📱 Phone Monitoring</div>
+                <div class="service">🔐 Data Protection</div>
+            </div>
+            <div class="contact-info">📍 Houston, TX • 📞 (713) 428-1255</div>
+            <div class="stats">99.9% Success Rate • 24/7 Support</div>
+        </div>
+    </div>
+</body>
+</html>
