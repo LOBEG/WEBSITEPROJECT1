@@ -46,7 +46,9 @@ const Footer = () => {
                 <FaYoutube className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/share/1AmnM5dd7W/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-blue-500 hover:text-blue-400 transition-colors"
               >
                 <FaFacebook className="w-6 h-6" />
