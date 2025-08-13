@@ -11,6 +11,7 @@ import {
   Shield
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,10 +23,47 @@ const Contact = () => {
     urgency: 'normal'
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      // EmailJS configuration - you'll need to replace these with your actual IDs
+      const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+      const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        urgency: formData.urgency,
+        message: formData.message,
+        to_email: 'invisibletracetech@gmail.com'
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you soon.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: '',
+        urgency: 'normal'
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitMessage('Sorry, there was an error sending your message. Please try calling us directly.');
+    }
+
+    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -57,8 +95,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: "invisibaletracetech@gmail.com",
-      link: "mailto:invisibaletracetech@gmail.com"
+      details: "invisibletracetech@gmail.com",
+      link: "mailto:invisibletracetech@gmail.com"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -105,6 +143,17 @@ const Contact = () => {
             >
               <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Get Free Consultation</h2>
+                
+                {submitMessage && (
+                  <div className={`mb-6 p-4 rounded-lg ${
+                    submitMessage.includes('error') || submitMessage.includes('Sorry') 
+                      ? 'bg-red-50 text-red-700 border border-red-200' 
+                      : 'bg-green-50 text-green-700 border border-green-200'
+                  }`}>
+                    {submitMessage}
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -119,6 +168,7 @@ const Contact = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                         placeholder="Your full name"
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -133,6 +183,7 @@ const Contact = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                         placeholder="your@email.com"
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -149,6 +200,7 @@ const Contact = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                         placeholder="+1 (555) 123-4567"
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -161,6 +213,7 @@ const Contact = () => {
                         value={formData.service}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                        disabled={isSubmitting}
                       >
                         <option value="">Select a service</option>
                         {services.map((service, index) => (
@@ -179,6 +232,7 @@ const Contact = () => {
                       value={formData.urgency}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                      disabled={isSubmitting}
                     >
                       <option value="normal">Normal (24-48 hours)</option>
                       <option value="urgent">Urgent (Same day)</option>
@@ -198,14 +252,20 @@ const Contact = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                       placeholder="Please describe your situation and what help you need..."
+                      disabled={isSubmitting}
                     ></textarea>
                   </div>
                   
                   <button
                     type="submit"
-                    className="w-full bg-cyan-600 hover:bg-cyan-700 text-white py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                    disabled={isSubmitting}
+                    className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center ${
+                      isSubmitting 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : 'bg-cyan-600 hover:bg-cyan-700 text-white'
+                    }`}
                   >
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                     <Send className="w-5 h-5 ml-2" />
                   </button>
                 </form>
@@ -273,7 +333,7 @@ const Contact = () => {
                 </a>
                 
                 <a
-                  href="mailto:invisibaletracetech@gmail.com"
+                  href="mailto:invisibletracetech@gmail.com"
                   className="w-full bg-gray-600 hover:bg-gray-700 text-white py-4 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                 >
                   <Mail className="w-5 h-5 mr-3" />
