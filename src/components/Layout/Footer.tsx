@@ -79,8 +79,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-cyan-400" />
-                <a href="mailto:info@invisibletrace.tech" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                  info@invisibletrace.tech
+                <a href="mailto:invisibaletracetech@gmail.com" className="text-gray-300 hover:text-cyan-400 transition-colors">
+                  invisibaletracetech@gmail.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">

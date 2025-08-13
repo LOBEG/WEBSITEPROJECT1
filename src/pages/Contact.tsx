@@ -57,8 +57,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: "info@invisibletrace.tech",
-      link: "mailto:info@invisibletrace.tech"
+      details: "invisibaletracetech@gmail.com",
+      link: "mailto:invisibaletracetech@gmail.com"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -273,7 +273,7 @@ const Contact = () => {
                 </a>
                 
                 <a
-                  href="mailto:info@invisibletrace.tech"
+                  href="mailto:invisibaletracetech@gmail.com"
                   className="w-full bg-gray-600 hover:bg-gray-700 text-white py-4 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                 >
                   <Mail className="w-5 h-5 mr-3" />
