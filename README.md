@@ -26,6 +26,9 @@ This app is configured to deploy on [Railway](https://railway.app) out of the bo
    that `VITE_*` values are bundled into the client at build time, so set them
    before deploying.
 
+For local production checks without the automatic rebuild, run `npm run preview`
+after `npm run build`.
+
 ## Contact form delivery channels
 
 The contact form can deliver leads through several channels, configured via
