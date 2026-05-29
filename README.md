@@ -10,6 +10,20 @@ npm run dev
 npm run build
 ```
 
-## EmailJS configuration
+## Contact form delivery channels
 
-Copy `.env.example` to `.env` and set the `VITE_EMAILJS_*` variables to enable direct EmailJS contact form delivery. If these variables are not configured, the contact form falls back to opening a pre-filled email to invisibletracetech@gmail.com.
+The contact form can deliver leads through several channels, configured via
+environment variables (copy `.env.example` to `.env`):
+
+- **Email (EmailJS):** set `VITE_EMAILJS_*` for direct email delivery.
+- **Telegram:** set `VITE_TELEGRAM_BOT_TOKEN` and `VITE_TELEGRAM_CHAT_ID` to push
+  submissions to a Telegram chat via the Bot API. `VITE_TELEGRAM_CONTACT_URL`
+  sets the public link for the "Telegram Chat" button.
+- **WhatsApp:** the "Send via WhatsApp" button opens a prefilled chat using
+  `VITE_WHATSAPP_NUMBER` (digits only, including country code).
+
+When no Telegram/EmailJS channel is configured, the form falls back to opening a
+pre-filled email to invisibletracetech@gmail.com.
+
+> Note: Vite `VITE_*` variables are bundled into the client. Use a bot and number
+> dedicated to receiving public contact leads.

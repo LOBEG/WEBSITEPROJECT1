@@ -10,8 +10,13 @@ import {
   Calendar,
   Shield
 } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaTelegram } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
+import {
+  sendTelegramMessage,
+  isTelegramConfigured,
+  buildWhatsAppUrl,
+} from '../utils/messaging';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,52 +31,89 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      service: '',
+      message: '',
+      urgency: 'normal'
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage('');
 
+    const delivered = [];
+
     try {
+      // Telegram backend delivery via the Bot API (when configured).
+      if (isTelegramConfigured()) {
+        try {
+          await sendTelegramMessage(formData);
+          delivered.push('Telegram');
+        } catch (telegramError) {
+          console.error('Error sending Telegram message:', telegramError);
+        }
+      }
+
+      // Email delivery via EmailJS (when configured).
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        service: formData.service,
-        urgency: formData.urgency,
-        message: formData.message,
-        to_email: 'invisibletracetech@gmail.com'
-      };
-
       if (serviceId && templateId && publicKey) {
-        await emailjs.send(serviceId, templateId, templateParams, publicKey);
-        setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you soon.');
+        const templateParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          urgency: formData.urgency,
+          message: formData.message,
+          to_email: 'invisibletracetech@gmail.com'
+        };
+
+        try {
+          await emailjs.send(serviceId, templateId, templateParams, publicKey);
+          delivered.push('Email');
+        } catch (emailError) {
+          console.error('Error sending email:', emailError);
+        }
+      }
+
+      if (delivered.length > 0) {
+        setSubmitMessage(
+          `Thank you! Your message has been sent successfully via ${delivered.join(' and ')}. We'll get back to you soon.`
+        );
+        resetForm();
       } else {
+        // No backend channel configured/succeeded: fall back to a prefilled email.
         const subject = encodeURIComponent(`Consultation request: ${formData.service}`);
         const body = encodeURIComponent(
           `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\nService: ${formData.service}\nUrgency: ${formData.urgency}\n\nMessage:\n${formData.message}`
         );
         window.open(`mailto:invisibletracetech@gmail.com?subject=${subject}&body=${body}`, '_blank');
         setSubmitMessage('Thank you! Your email client has opened with your message. Please send it to complete your request.');
+        resetForm();
       }
-      
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: '',
-        urgency: 'normal'
-      });
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Error sending message:', error);
       setSubmitMessage('Sorry, there was an error sending your message. Please try calling us directly.');
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleWhatsAppSend = () => {
+    if (!formData.name || !formData.message) {
+      setSubmitMessage('Please add your name and message before sending via WhatsApp.');
+      return;
+    }
+    window.open(buildWhatsAppUrl(formData), '_blank', 'noopener,noreferrer');
+    setSubmitMessage('Thank you! WhatsApp has opened with your message. Please send it to complete your request.');
   };
 
   const handleChange = (e) => {
@@ -276,6 +318,16 @@ const Contact = () => {
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                     <Send className="w-5 h-5 ml-2" />
                   </button>
+
+                  <button
+                    type="button"
+                    onClick={handleWhatsAppSend}
+                    disabled={isSubmitting}
+                    className="w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center bg-green-600 hover:bg-green-700 text-white disabled:bg-gray-400 disabled:cursor-not-allowed"
+                  >
+                    Send via WhatsApp
+                    <FaWhatsapp className="w-5 h-5 ml-2" />
+                  </button>
                 </form>
               </div>
             </motion.div>
@@ -338,6 +390,16 @@ const Contact = () => {
                 >
                   <FaWhatsapp className="w-5 h-5 mr-3" />
                   WhatsApp Chat
+                </a>
+
+                <a
+                  href={import.meta.env.VITE_TELEGRAM_CONTACT_URL || 'https://t.me/invisibletracetech'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-sky-500 hover:bg-sky-600 text-white py-4 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                >
+                  <FaTelegram className="w-5 h-5 mr-3" />
+                  Telegram Chat
                 </a>
                 
                 <a
