@@ -10,6 +10,20 @@ npm run dev
 npm run build
 ```
 
+## Deploying on Railway
+
+This app is configured to deploy on [Railway](https://railway.app) out of the box
+(see `railway.json`):
+
+1. Create a new Railway project from this repository.
+2. Railway builds the site with `npm run build` and serves the built `dist/`
+   output with `npm run start` (`vite preview`), binding to the `PORT` Railway
+   provides. Railway hosts (`*.up.railway.app`) and custom domains are allowed.
+3. (Optional) Add the `VITE_*` environment variables below under the service's
+   **Variables** tab so the contact form delivery channels are configured. Note
+   that `VITE_*` values are bundled into the client at build time, so set them
+   before deploying.
+
 ## Contact form delivery channels
 
 The contact form can deliver leads through several channels, configured via
