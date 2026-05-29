@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight, Shield, Eye, Lock, Search, Bitcoin, CreditCard } from 'lucide-react';
 
 const Blog = () => {
+  const [activeCategory, setActiveCategory] = useState('All Posts');
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    setNewsletterSubmitted(true);
+    setNewsletterEmail('');
+  };
   const featuredPost = {
     title: "The Ultimate Guide to Cryptocurrency Recovery in 2024",
     excerpt: "Learn the latest techniques and best practices for recovering lost Bitcoin and other cryptocurrencies. Our experts share insider knowledge on wallet recovery, private key restoration, and scam investigation.",
@@ -87,6 +97,11 @@ const Blog = () => {
     "Data Recovery",
     "Cybersecurity"
   ];
+
+  const visiblePosts =
+    activeCategory === 'All Posts'
+      ? blogPosts
+      : blogPosts.filter((post) => post.category === activeCategory);
 
   return (
     <div className="bg-gray-50">
@@ -172,8 +187,10 @@ const Blog = () => {
             {categories.map((category, index) => (
               <button
                 key={index}
+                type="button"
+                onClick={() => setActiveCategory(category)}
                 className={`px-6 py-2 rounded-full font-medium transition-colors ${
-                  index === 0
+                  activeCategory === category
                     ? 'bg-cyan-600 text-white'
                     : 'bg-white text-gray-600 hover:bg-cyan-50 hover:text-cyan-600'
                 }`}
@@ -196,7 +213,7 @@ const Blog = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
+            {visiblePosts.map((post, index) => (
               <motion.article
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -250,6 +267,16 @@ const Blog = () => {
               </motion.article>
             ))}
           </div>
+
+          {visiblePosts.length === 0 && (
+            <div className="text-center py-12">
+              <Search className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-600 mb-2">No articles in this category yet</h3>
+              <p className="text-gray-500">
+                Try selecting a different category to explore more articles.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -261,16 +288,25 @@ const Blog = () => {
             <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
               Subscribe to our newsletter for the latest cybersecurity insights, tips, and industry updates delivered to your inbox.
             </p>
-            <div className="max-w-md mx-auto flex">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-6 py-4 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-300"
-              />
-              <button className="bg-gray-900 hover:bg-gray-800 px-8 py-4 rounded-r-lg font-semibold transition-colors">
-                Subscribe
-              </button>
-            </div>
+            {newsletterSubmitted ? (
+              <p className="text-lg font-semibold max-w-md mx-auto">
+                Thanks for subscribing! Check your inbox to confirm your subscription.
+              </p>
+            ) : (
+              <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto flex">
+                <input
+                  type="email"
+                  required
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="flex-1 px-6 py-4 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-300"
+                />
+                <button type="submit" className="bg-gray-900 hover:bg-gray-800 px-8 py-4 rounded-r-lg font-semibold transition-colors">
+                  Subscribe
+                </button>
+              </form>
+            )}
             <p className="text-sm text-cyan-100 mt-4">
               No spam, unsubscribe at any time. We respect your privacy.
             </p>
