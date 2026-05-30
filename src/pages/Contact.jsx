@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Phone, 
   Mail, 
   MapPin, 
   Clock, 
@@ -137,12 +136,6 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <Phone className="w-6 h-6" />,
-      title: "Phone",
-      details: "+1 (713) 428-1255",
-      link: "tel:+17134281255"
-    },
-    {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
       details: "invisibletracetech@gmail.com",
@@ -173,7 +166,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-5xl font-bold mb-6">Contact Our Experts</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-6">Contact Our Experts</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Get professional cybersecurity assistance. Our team is ready to help you 24/7 with your digital security needs.
             </p>
@@ -375,7 +368,7 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Quick Contact</h3>
                 
                 <a
-                  href="https://wa.me/17134281255"
+                  href={buildWhatsAppUrl({ name: '', message: 'Hello, I would like to discuss your cybersecurity services.' })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
