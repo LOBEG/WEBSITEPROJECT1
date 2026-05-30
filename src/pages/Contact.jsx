@@ -14,6 +14,7 @@ import emailjs from 'emailjs-com';
 import {
   sendTelegramMessage,
   isTelegramConfigured,
+  isWhatsAppConfigured,
   buildWhatsAppUrl,
 } from '../utils/messaging';
 
@@ -100,7 +101,7 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      setSubmitMessage('Sorry, there was an error sending your message. Please try calling us directly.');
+      setSubmitMessage('Sorry, there was an error sending your message. Please try email or Telegram instead.');
     } finally {
       setIsSubmitting(false);
     }
@@ -111,7 +112,12 @@ const Contact = () => {
       setSubmitMessage('Please add your name and message before sending via WhatsApp.');
       return;
     }
-    window.open(buildWhatsAppUrl(formData), '_blank', 'noopener,noreferrer');
+    const whatsAppUrl = buildWhatsAppUrl(formData);
+    if (!whatsAppUrl) {
+      setSubmitMessage('WhatsApp contact is not configured. Please send your request by email or Telegram.');
+      return;
+    }
+    window.open(whatsAppUrl, '_blank', 'noopener,noreferrer');
     setSubmitMessage('Thank you! WhatsApp has opened with your message. Please send it to complete your request.');
   };
 
@@ -312,15 +318,17 @@ const Contact = () => {
                     <Send className="w-5 h-5 ml-2" />
                   </button>
 
-                  <button
-                    type="button"
-                    onClick={handleWhatsAppSend}
-                    disabled={isSubmitting}
-                    className="w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 flex items-center justify-center bg-green-600 hover:bg-green-700 text-white disabled:bg-gray-400 disabled:cursor-not-allowed"
-                  >
-                    Send via WhatsApp
-                    <FaWhatsapp className="w-5 h-5 ml-2" />
-                  </button>
+                  {isWhatsAppConfigured() && (
+                    <button
+                      type="button"
+                      onClick={handleWhatsAppSend}
+                      disabled={isSubmitting}
+                      className="w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 flex items-center justify-center bg-green-600 hover:bg-green-700 text-white disabled:bg-gray-400 disabled:cursor-not-allowed"
+                    >
+                      Send via WhatsApp
+                      <FaWhatsapp className="w-5 h-5 ml-2" />
+                    </button>
+                  )}
                 </form>
               </div>
             </motion.div>
@@ -367,15 +375,17 @@ const Contact = () => {
               <div className="space-y-3 pt-4">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Quick Contact</h3>
                 
-                <a
-                  href={buildWhatsAppUrl({ name: '', message: 'Hello, I would like to discuss your cybersecurity services.' })}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
-                >
-                  <FaWhatsapp className="w-5 h-5 mr-3" />
-                  WhatsApp Chat
-                </a>
+                {isWhatsAppConfigured() && (
+                  <a
+                    href={buildWhatsAppUrl({ name: '', message: 'Hello, I would like to discuss your cybersecurity services.' })}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                  >
+                    <FaWhatsapp className="w-5 h-5 mr-3" />
+                    WhatsApp Chat
+                  </a>
+                )}
 
                 <a
                   href={import.meta.env.VITE_TELEGRAM_CONTACT_URL || 'https://t.me/invisibletracetech'}
